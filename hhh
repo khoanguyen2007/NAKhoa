@@ -1,0 +1,40 @@
+def thiet_lap_thong_tin_nguoi_lao_dong():
+    print("=== THIẾT LẬP THÔNG TIN NGƯỜI LAO ĐỘNG ===")
+
+    ten = input("Nhập tên người lao động: ")
+
+    # Nhập năm tính thuế (bắt buộc là số)
+    while True:
+        try:
+            nam = int(input("Nhập năm tính thuế: "))
+            if nam <= 0:
+                print("Năm phải lớn hơn 0!")
+            else:
+                break
+        except ValueError:
+            print("Vui lòng nhập năm hợp lệ!")
+
+    # Nhập số người phụ thuộc
+    while True:
+        try:
+            so_phu_thuoc = int(input("Nhập số người phụ thuộc: "))
+            if so_phu_thuoc < 0:
+                print("Số người phụ thuộc không được âm!")
+            else:
+                break
+        except ValueError:
+            print("Vui lòng nhập số nguyên hợp lệ!")
+
+    # Lưu thông tin vào dictionary
+    thong_tin = {
+        "ten": ten,
+        "nam": nam,
+        "so_nguoi_phu_thuoc": so_phu_thuoc
+    }
+
+    print("\n✔️ Đã thiết lập thông tin người lao động:")
+    print(f"- Họ tên: {ten}")
+    print(f"- Năm tính thuế: {nam}")
+    print(f"- Số người phụ thuộc: {so_phu_thuoc}")
+
+    return thong_tin
